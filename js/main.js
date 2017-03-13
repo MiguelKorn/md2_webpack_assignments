@@ -242,3 +242,9 @@ console.log('Wanneer gebruik je de const keyword', 'Als je zeker weet dat de val
  * (objecten en arrays kunnen in elkaar opgeslagen worden)
  */
 
+let me = {
+    firstName: 'Miguel',
+    lastName: 'Korn',
+    age: 20,
+    family: ["Lorenzo", "Amber", "Marina", "Thomas"]
+};
