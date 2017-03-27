@@ -248,12 +248,12 @@ let me = {
  * Aan deze code hoef je niets te veranderen
  */
 
-Array.prototype.random = function() {
+Array.prototype.random = function () {
     let randomIndex = Math.floor(Math.random() * this.length);
-    return this[ randomIndex ];
+    return this[randomIndex];
 };
 
-String.prototype.replaceAll = function(search, replacement) {
+String.prototype.replaceAll = function (search, replacement) {
     return this.replace(new RegExp(search, 'g'), replacement);
 };
 
@@ -265,6 +265,7 @@ String.prototype.replaceAll = function(search, replacement) {
  * splice().
  * console.log() de naam die deze functie returned
  */
+console.log(students.random());
 
 /**
  * Opdracht 17: Custom prototype method gebruiken
@@ -273,13 +274,55 @@ String.prototype.replaceAll = function(search, replacement) {
  * op alle plekken te vervangen voor een ander woord
  * console.log() deze gewijzigde tekst
  */
+const text = 'Dit is een lange tmp. Deze tmp is heel lang.';
+console.log(text.replaceAll('tmp', 'tekst'));
 
 /**
  * Opdracht 18: Prototype based language
  * Geef antwoord op onderstaande vraag
  */
-console.log('Waarom heet JavaScript een prototype based language?', 'jouw antwoord');
+console.log('Waarom heet JavaScript een prototype based language?', 'Javascript maakt gebruik van een prototype chain -> alle objecten worden aan elkaar gekoppeld uiteidelijk kom je uit bij het basis object');
 
+/**
+ * Opdracht 19: Zelf een custom prototype method maken
+ * Soms wil je een array leeg kunnen gooien. Het zou dus wel handig zijn als
+ * je bij elke array een empty() functie kunt aanroepen.
+ * Zorg ervoor dat deze functie er is en laat met 3 arrays zien dat hij werkt
+ */
+const arrayOne = [1, 2, 3, 4, 5];
+const arrayTwo = ['string1', 'string2', 'string3', 'string4'];
+const arrayThree = [1, 'string1', 'string2', 3, 4, 'string3', 5, 'string4'];
+
+Array.prototype.empty = function () {
+    this.length = 0;
+};
+arrayOne.empty();
+arrayTwo.empty();
+arrayThree.empty();
+
+console.log(arrayOne.length);
+console.log(arrayTwo.length);
+console.log(arrayThree.length);
+
+/**
+ * Opdracht 20: Monkey patching (?)
+ * Je begint nu in te zien hoe JS werkt. Probeer nu de splice() en push()
+ * functies van Arrays te overschrijven met een eigen functie.
+ * Maak 2 arrays aan en laat zien dat je code werkt
+ */
+
+Array.prototype.splice = function (number) {
+    console.log("spliced " + number);
+};
+//
+// Array.prototype.push = function (number) {
+//     console.log("pushed " + number);
+// };
+
+const testArray = [1,2,3];
+
+testArray.splice(3);
+// testArray.push(866);
 
 // bonus opdrachten
 
@@ -289,7 +332,44 @@ import extFunc from 'extFunc';
 extFunc();
 
 // opdracht 2:
-// opdracht 3: high order function
 
+// opdracht 3: high order function
+const numbers = [14, 35, 666];
+let totalNum = 0;
+
+function total(number) {
+    return totalNum += number;
+}
+
+function forEach(array, action) {
+    for (let i = 0; i < array.length; i++)
+        action(array[i]);
+}
+
+forEach(numbers, total);
+console.log(totalNum);
 
 // opdracht 4: een closure in JavaScript
+
+const makeAdder = (x) => (y) => {
+    return x + y
+};
+
+let add5 = makeAdder(5);
+let add10 = makeAdder(10);
+
+console.log(add5(2));  // 7
+console.log(add10(2)); // 12
+
+// ------------------------------------------------------
+
+const moduloSum = (x) => (y) => {
+    return x % y
+};
+
+let module12 = moduloSum(12);
+
+console.log(module12(6)); // 0
+
+// -----------------------------------------------------
+
