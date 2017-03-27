@@ -149,17 +149,7 @@ let student = {
 student.showName();
 
 /**
-<<<<<<< HEAD
- * Opdracht 9: Functions, objects
- * Maak een object genaamd 'student'
- * Voeg nadat je het object hebt aangemaakt een functie toe aan 'student' met de naam 'showName'
- */
-
-/**
- * Opdracht 10: Arrays & for loops
-=======
  * Opdracht 9: Arrays & for loops
->>>>>>> upstream/master
  * Maak een array genaamd 'students' met daarin 10 namen van je medeleerlingen
  * Schrijf een for loop om alle namen in de Array te laten zien
  */
@@ -252,6 +242,44 @@ let me = {
     age: 20,
     family: ["Lorenzo", "Amber", "Marina", "Thomas"]
 };
+
+/**
+ * Hieronder heb ik code geschreven die je nodig hebt voor vraag 16 en 17
+ * Aan deze code hoef je niets te veranderen
+ */
+
+Array.prototype.random = function() {
+    let randomIndex = Math.floor(Math.random() * this.length);
+    return this[ randomIndex ];
+};
+
+String.prototype.replaceAll = function(search, replacement) {
+    return this.replace(new RegExp(search, 'g'), replacement);
+};
+
+/**
+ * Opdracht 16: Custom prototype method gebruiken
+ * Maak een array met meerdere namen
+ * Probeer vervolgens de random() functie (die hierboven staat) te gebruiken
+ * Tip: je roept deze functie op dezelfde manier aan als bijvoorbeeld push() en
+ * splice().
+ * console.log() de naam die deze functie returned
+ */
+
+/**
+ * Opdracht 17: Custom prototype method gebruiken
+ * Maak een variabele waarin je een lange tekst opslaat
+ * Probeer vervolgens de replaceAll() functie te gebruiken om een bepaald woord
+ * op alle plekken te vervangen voor een ander woord
+ * console.log() deze gewijzigde tekst
+ */
+
+/**
+ * Opdracht 18: Prototype based language
+ * Geef antwoord op onderstaande vraag
+ */
+console.log('Waarom heet JavaScript een prototype based language?', 'jouw antwoord');
+
 
 // bonus opdrachten
 
