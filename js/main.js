@@ -228,7 +228,7 @@ let tmpName = 'Miguel';
 
 const carWheels = 4;
 const username = 'miguelkorn';
-const pi = 3.14159265359;
+// const pi = 3.14159265359;
 const mail = '123@mail.com';
 
 
@@ -252,3 +252,16 @@ let me = {
     age: 20,
     family: ["Lorenzo", "Amber", "Marina", "Thomas"]
 };
+
+// bonus opdrachten
+
+// opdracht 1: externe functie
+import extFunc from 'extFunc';
+
+extFunc();
+
+// opdracht 2:
+// opdracht 3: high order function
+
+
+// opdracht 4: een closure in JavaScript
