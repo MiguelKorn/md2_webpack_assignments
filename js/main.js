@@ -1,3 +1,4 @@
+import 'les_6';
 /**
  * Uitleg van deze opdrachten:
  * Kijk hoever je komt met deze opdrachten. Ik zal deze lijst in de toekomst
@@ -313,7 +314,6 @@ console.log(arrayThree.length);
  * Je begint nu in te zien hoe JS werkt. Probeer nu de splice() en push()
  * functies van Arrays te overschrijven met een eigen functie.
  * Maak 2 arrays aan en laat zien dat je code werkt
-<<<<<<< HEAD
  */
 
 Array.prototype.splice = function (number) {
@@ -324,7 +324,7 @@ Array.prototype.splice = function (number) {
 //     console.log("pushed " + number);
 // };
 
-const testArray = [1,2,3];
+const testArray = [1, 2, 3];
 
 testArray.splice(3);
 // testArray.push(866);
@@ -332,13 +332,16 @@ testArray.splice(3);
 // bonus opdrachten
 
 // opdracht 1: externe functie
+console.log("Opdracht 1 -------------------");
 import extFunc from 'extFunc';
 
 extFunc();
 
 // opdracht 2:
+console.log("Opdracht 2 -------------------");
 
 // opdracht 3: high order function
+console.log("Opdracht 3 -------------------");
 const numbers = [14, 35, 666];
 let totalNum = 0;
 
@@ -346,7 +349,7 @@ function total(number) {
     return totalNum += number;
 }
 
-const forEach = (array, action)=> {
+const forEach = (array, action) => {
     for (let i = 0; i < array.length; i++)
         action(array[i]);
 };
@@ -355,6 +358,7 @@ forEach(numbers, total);
 console.log(totalNum);
 
 // opdracht 4: een closure in JavaScript
+console.log("Opdracht 4 -------------------");
 
 // const makeAdder = (x) => (y) => {
 //     return x + y
@@ -379,12 +383,12 @@ testObject.update();
 testObject.show();
 
 /*
-let add5 = makeAdder(5);
-let add10 = makeAdder(10);
+ let add5 = makeAdder(5);
+ let add10 = makeAdder(10);
 
-console.log(add5(2));  // 7
-console.log(add10(2)); // 12
-*/
+ console.log(add5(2));  // 7
+ console.log(add10(2)); // 12
+ */
 
 
 // ------------------------------------------------------
@@ -398,3 +402,50 @@ let module12 = moduloSum(12);
 console.log(module12(6)); // 0
 
 // -----------------------------------------------------
+
+// opdracht 5: Schrijf voorbeelden van Arrow functies. Wat is er goed aan en wat kan je er allemaal mee?
+console.log("Opdracht 5 -------------------");
+console.log(`Wat is er goed aan? 
+    - No binding of 'this'
+    - No binding of arguments
+    - ...`);
+console.log(`Wat kan je er allemaal mee?
+    - ...
+    - ...
+    - ...`);
+
+const arrowFunction = (arrow, func) => {
+
+};
+
+const func = x => x * x;
+console.log(func(5));
+
+const simple = a => a > 15 ? 15 : a;
+console.log(simple(16)); // 15
+console.log(simple(10)); // 10
+
+setTimeout( () => {
+    console.log('I happen sooner');
+    setTimeout( () => {
+        // deeper code
+        console.log('I happen later');
+    }, 1);
+}, 1);
+
+// opdracht 6: Zoek template literals uit en gebruik het in een aantal console.log()
+console.log("Opdracht 6 -------------------");
+console.log("------------------------------");
+console.log('OLD: string text line 1\n' +
+    'string text line 2');
+console.log(`NEW: string text line 1
+string text line 2`);
+console.log("------------------------------");
+const a = 5;
+const b = 10;
+console.log('OLD: Fifteen is ' + (a + b) + ' and\nnot ' + (2 * a + b) + '.');
+console.log(`NEW: Fifteen is ${a + b} and 
+not ${2 * a + b}.`);
+console.log("------------------------------");
+
+
