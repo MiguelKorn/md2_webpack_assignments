@@ -341,25 +341,46 @@ function total(number) {
     return totalNum += number;
 }
 
-function forEach(array, action) {
+const forEach = (array, action)=> {
     for (let i = 0; i < array.length; i++)
         action(array[i]);
-}
+};
 
 forEach(numbers, total);
 console.log(totalNum);
 
 // opdracht 4: een closure in JavaScript
 
-const makeAdder = (x) => (y) => {
-    return x + y
-};
+// const makeAdder = (x) => (y) => {
+//     return x + y
+// };
 
+function makeAdder(x) {
+    var test = 5;
+    return {
+        update: () => {
+            test++;
+        },
+        show: () => {
+            console.log(test);
+        }
+    };
+}
+
+let testObject = makeAdder();
+testObject.update();
+testObject.update();
+testObject.update();
+testObject.show();
+
+/*
 let add5 = makeAdder(5);
 let add10 = makeAdder(10);
 
 console.log(add5(2));  // 7
 console.log(add10(2)); // 12
+*/
+
 
 // ------------------------------------------------------
 
