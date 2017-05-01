@@ -201,7 +201,6 @@ console.log('Alle facturen van een zakelijke klant sla ik op in een:',
 
 console.log('Een factuur sla ik op in een:',
     {array: false, object: true, primitive: false});
-
 console.log('Als ik vanuit JavaScript een menu maak met knoppen, dan sla ik de knoppen op in een:',
     {array: true, object: false, primitive: false});
 
@@ -232,7 +231,8 @@ console.log('Wanneer gebruik je de const keyword', 'Als je zeker weet dat de val
 /**
  * Opdracht 15: Objects en array
  * Maak een object voor jezelf (naam, leeftijd, lengte)
- * Maak in je object een array aan genaamd 'family' en vul deze array met namen uit je familie
+ * Maak in je object een array aan genaamd 'family' en vul deze array met namen
+ * uit je familie
  * (objecten en arrays kunnen in elkaar opgeslagen worden)
  */
 
@@ -265,6 +265,7 @@ String.prototype.replaceAll = function (search, replacement) {
  * splice().
  * console.log() de naam die deze functie returned
  */
+
 console.log(students.random());
 
 /**
@@ -274,6 +275,7 @@ console.log(students.random());
  * op alle plekken te vervangen voor een ander woord
  * console.log() deze gewijzigde tekst
  */
+
 const text = 'Dit is een lange tmp. Deze tmp is heel lang.';
 console.log(text.replaceAll('tmp', 'tekst'));
 
@@ -281,6 +283,7 @@ console.log(text.replaceAll('tmp', 'tekst'));
  * Opdracht 18: Prototype based language
  * Geef antwoord op onderstaande vraag
  */
+
 console.log('Waarom heet JavaScript een prototype based language?', 'Javascript maakt gebruik van een prototype chain -> alle objecten worden aan elkaar gekoppeld uiteidelijk kom je uit bij het basis object');
 
 /**
@@ -289,6 +292,7 @@ console.log('Waarom heet JavaScript een prototype based language?', 'Javascript 
  * je bij elke array een empty() functie kunt aanroepen.
  * Zorg ervoor dat deze functie er is en laat met 3 arrays zien dat hij werkt
  */
+
 const arrayOne = [1, 2, 3, 4, 5];
 const arrayTwo = ['string1', 'string2', 'string3', 'string4'];
 const arrayThree = [1, 'string1', 'string2', 3, 4, 'string3', 5, 'string4'];
@@ -309,6 +313,7 @@ console.log(arrayThree.length);
  * Je begint nu in te zien hoe JS werkt. Probeer nu de splice() en push()
  * functies van Arrays te overschrijven met een eigen functie.
  * Maak 2 arrays aan en laat zien dat je code werkt
+<<<<<<< HEAD
  */
 
 Array.prototype.splice = function (number) {
@@ -393,4 +398,3 @@ let module12 = moduloSum(12);
 console.log(module12(6)); // 0
 
 // -----------------------------------------------------
-
